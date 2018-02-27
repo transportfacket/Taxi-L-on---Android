@@ -3,4 +3,21 @@
     <string name="calculatorButtonString">Garantilöneräknare</string>
     <string name="monthlyButtoString">Månadslön</string>
     <string name="faqButtonString">Vanliga frågor</string>
+    <string name="back">Tillbaka</string>
+    <string name="calculateButton">Räkna ut</string>
+    <string name="goBackButtonDescription">Gå tillbaka</string>
+    <string name="labelKollektivavtal">Finns det kollektivavtal på din arbetsplats?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <string name="labelWhereWork">Var i landet kör du? Stad eller ort:</string>
+    <string name="descInfoKollektiv">Info om kollektivaval</string>
+    <string name="descWhereWork">Info om ort</string>
+    <string name="hintWhereWorkTextField">ex. Malmö</string>
+    <string name="labelHours">Hur många timmar har du arbetat?</string>
+    <string name="hintHoursTextField">ex. 174</string>
+    <string name="labelHoursToWorkAgreement">Arbetstidsmått:</string>
+    <string name="placeHolderPercentage">100%</string>
+    <string name="descMonthlySalary">Månadslön</string>
+    <string name="descLogo">Tryck 12 gånger</string>
+    <string name="descWorkedHours">Info om arbetade timmar</string>
 </resources>

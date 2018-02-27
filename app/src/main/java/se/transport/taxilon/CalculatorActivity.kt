@@ -27,75 +27,40 @@ class CalculatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
+        setupActionBar()
 
 
-        val etCity = findViewById<EditText>(R.id.etCity) as EditText
-        val etHours = findViewById<EditText>(R.id.etHours) as EditText
-        val etArbetstidsmatt = findViewById<EditText>(R.id.etArbetstidsmatt) as EditText
+
         val kollektivYes = findViewById<RadioButton>(R.id.radioButtonYes) as RadioButton
         val kollektivNo = findViewById<RadioButton>(R.id.radioButtonNo) as RadioButton
         val calculateButton = findViewById<Button>(R.id.bBerakna) as Button
 
 
+    }
 
+
+
+    fun setupActionBar(){
         val toolBar = findViewById<Toolbar>(R.id.app_bar) as Toolbar
         toolBar.title=""
         setSupportActionBar(toolBar)
         var tvToolBar = findViewById<TextView>(R.id.tvToolbarTitle) as TextView
-        tvToolBar.text = "Räkna ut din garantilön"
-        toolBar.setNavigationIcon(R.drawable.abc_ic_ab_back_material)
-        toolBar.setNavigationOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                onBackPressed()
-            }})
-
-
-        calculateButton.setOnClickListener {
-
-            city = etCity.text.toString().toLowerCase().trim()
-            hours = etHours.text.toString().toInt()
-            arbetstidsmatt = etArbetstidsmatt.toString().toInt()
-
-
-            }
+        tvToolBar.text = getString(R.string.calculatorButtonString)
 
 
 
+        toolBar.setPadding(0, 0, 0, 0)//for tab otherwise give space in tab
+        toolBar.setContentInsetsAbsolute(0, 0)
 
-
-           if( kollektivYes.isChecked){
-
-            calculate(city, hours, arbetstidsmatt)
-
-           }else{
-               Toast.makeText(this, city, Toast.LENGTH_SHORT).show()
-
-           }
-        }
-
-
-fun calculate(city: String, hours: Int, procent: Int ) {
-
-
-
-    if(procent > 100){
-        arbetstidsmatt = 100
-    }
-
-    if(city == "stockholm" || city == "stokholm" || city=="stocholm"){
-        garanti = garantiLonSthml * arbetstidsmatt
-
-    }else{
-        garanti = garantiLon * arbetstidsmatt
 
 
     }
-    timLon = (garanti /(garantiTimmar * arbetstidsmatt)).toInt()
 
 
-    Toast.makeText(this, garanti, Toast.LENGTH_SHORT).show()
-
+    fun backButton(v: View){
+        onBackPressed()
     }
+
 
 
 

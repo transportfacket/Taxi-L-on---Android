@@ -23,20 +23,22 @@
             android:background="@drawable/button_bg_rounded_corners"
             android:bottomLeftRadius="10dp"
             android:bottomRightRadius="10dp"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:onClick="calculatorButtonOnClick"
-            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
 
-            android:paddingRight="50dp"
+            android:paddingEnd="50dp"
             android:text="@string/calculatorButtonString"
-            android:textAlignment="textStart"
+
             android:textAllCaps="false"
             android:textSize="24sp"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            android:paddingLeft="8dp"
+            android:paddingRight="50dp" />
 
         <Button
             android:id="@+id/monthlyButton"
@@ -46,16 +48,18 @@
             android:layout_marginTop="60dp"
             android:background="@drawable/button_bg_rounded_corners"
 
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:onClick="monthlyButtonOnClick"
-            android:paddingLeft="8dp"
-            android:paddingRight="50dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="50dp"
             android:text="@string/monthlyButtoString"
             android:textAllCaps="false"
             android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calculatorButton" />
+            app:layout_constraintTop_toBottomOf="@+id/calculatorButton"
+            android:paddingLeft="8dp"
+            android:paddingRight="50dp" />
 
         <Button
             android:id="@+id/faqButton"
@@ -65,16 +69,18 @@
             android:layout_marginTop="60dp"
             android:background="@drawable/button_bg_rounded_corners"
 
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:onClick="faqButtonOnClick"
-            android:paddingLeft="8dp"
-            android:paddingRight="50dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="50dp"
             android:text="@string/faqButtonString"
             android:textAllCaps="false"
             android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/monthlyButton" />
+            app:layout_constraintTop_toBottomOf="@+id/monthlyButton"
+            android:paddingLeft="8dp"
+            android:paddingRight="50dp" />
 
 
         <ImageView
@@ -85,7 +91,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:contentDescription="Månadslön"
+            android:contentDescription="@string/descMonthlySalary"
             android:elevation="2dp"
             android:scaleType="fitCenter"
             android:src="@drawable/coins3x"
@@ -148,13 +154,15 @@
             android:layout_height="75dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:contentDescription="@string/descLogo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/faqButton"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/logo3x" />
+            app:srcCompat="@drawable/logo3x"
+            android:layout_marginRight="8dp" />
 
     </android.support.constraint.ConstraintLayout>
 
