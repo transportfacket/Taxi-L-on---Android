@@ -6,4 +6,5 @@
     <color name="buttonColor">#d2fad100</color>
     <color name="taxiOrange">#fad100</color>
     <color name="taxiBlack">#141414</color>
+    <color name="grey">#808080</color>
 </resources>

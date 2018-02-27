@@ -26,11 +26,9 @@
             android:gravity="start|center_vertical"
             android:onClick="calculatorButtonOnClick"
             android:paddingStart="8dp"
-
+            android:textAllCaps="false"
             android:paddingEnd="50dp"
             android:text="@string/calculatorButtonString"
-
-            android:textAllCaps="false"
             android:textSize="24sp"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
