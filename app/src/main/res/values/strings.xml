@@ -20,4 +20,7 @@
     <string name="descMonthlySalary">Månadslön</string>
     <string name="descLogo">Tryck 12 gånger</string>
     <string name="descWorkedHours">Info om arbetade timmar</string>
+    <string name="workAllWeekDays">Arbetar du alla veckans dagar?</string>
+    <string name="monthlysalary">Månadslön</string>
+    <string name="faq">Vanliga frågor</string>
 </resources>

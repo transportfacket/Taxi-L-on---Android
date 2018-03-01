@@ -24,7 +24,6 @@
             android:bottomLeftRadius="10dp"
             android:bottomRightRadius="10dp"
             android:gravity="start|center_vertical"
-            android:onClick="calculatorButtonOnClick"
             android:paddingStart="8dp"
             android:textAllCaps="false"
             android:paddingEnd="50dp"
@@ -47,7 +46,6 @@
             android:background="@drawable/button_bg_rounded_corners"
 
             android:gravity="start|center_vertical"
-            android:onClick="monthlyButtonOnClick"
             android:paddingStart="8dp"
             android:paddingEnd="50dp"
             android:text="@string/monthlyButtoString"
@@ -68,7 +66,6 @@
             android:background="@drawable/button_bg_rounded_corners"
 
             android:gravity="start|center_vertical"
-            android:onClick="faqButtonOnClick"
             android:paddingStart="8dp"
             android:paddingEnd="50dp"
             android:text="@string/faqButtonString"
@@ -97,7 +94,8 @@
             app:layout_constraintEnd_toEndOf="@+id/calculatorButton"
             app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toStartOf="@+id/calculatorButton"
-            app:layout_constraintTop_toTopOf="@+id/calculatorButton" />
+            app:layout_constraintTop_toTopOf="@+id/calculatorButton"
+            tools:targetApi="lollipop" />
 
         <ImageView
             android:id="@+id/calendarIcon"
@@ -107,7 +105,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:contentDescription="Månadslön"
+            android:contentDescription="@string/monthlysalary"
             android:elevation="2dp"
             android:scaleType="fitCenter"
             android:src="@drawable/calendar3x"
@@ -115,7 +113,8 @@
             app:layout_constraintEnd_toEndOf="@+id/monthlyButton"
             app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toStartOf="@+id/monthlyButton"
-            app:layout_constraintTop_toTopOf="@+id/monthlyButton" />
+            app:layout_constraintTop_toTopOf="@+id/monthlyButton"
+            tools:targetApi="lollipop" />
 
         <ImageView
             android:id="@+id/infoIcon"
@@ -125,7 +124,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:contentDescription="Vanliga frågor"
+            android:contentDescription="@string/faq"
             android:elevation="2dp"
             android:scaleType="fitCenter"
             android:src="@drawable/info3x"
@@ -133,7 +132,8 @@
             app:layout_constraintEnd_toEndOf="@+id/faqButton"
             app:layout_constraintHorizontal_bias="0.98"
             app:layout_constraintStart_toStartOf="@+id/faqButton"
-            app:layout_constraintTop_toTopOf="@+id/faqButton" />
+            app:layout_constraintTop_toTopOf="@+id/faqButton"
+            tools:targetApi="lollipop" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"

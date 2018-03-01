@@ -17,8 +17,6 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,16 +30,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/taxiBlack"
             android:layout_marginTop="8dp"
             android:text="@string/labelKollektivavtal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginRight="8dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/rgCollectiveAgreement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -53,31 +52,34 @@
 
             <RadioButton
                 android:id="@+id/radioButtonYes"
-
+                android:buttonTint="@color/taxiBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:layout_weight="50"
                 android:checked="true"
-                android:text="@string/yes" />
+                android:text="@string/yes"
+                tools:targetApi="lollipop" />
 
             <RadioButton
                 android:id="@+id/radioButtonNo"
                 android:layout_width="wrap_content"
+                android:buttonTint="@color/taxiBlack"
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
-                android:text="@string/no" />
+                android:text="@string/no"
+                tools:targetApi="lollipop" />
 
 
         </RadioGroup>
 
         <Button
             android:id="@+id/bBerakna"
-            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@drawable/button_bg_rounded_corners"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#fad100"
+
             android:onClick="calculatorButton"
             android:text="@string/calculateButton"
             android:textColor="#000"
@@ -86,130 +88,161 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/rgCollectiveAgreement"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/labelWhereWork"
+            android:textColor="@color/taxiBlack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/rgCollectiveAgreement"
             android:layout_marginRight="8dp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/infoWorkedHours"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/descWorkedHours"
-            app:layout_constraintBottom_toBottomOf="@+id/editText2"
+            app:layout_constraintBottom_toBottomOf="@+id/etWorkedHours"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editText2"
+            app:layout_constraintTop_toTopOf="@+id/etWorkedHours"
             app:srcCompat="@drawable/info3x" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/infoLocation"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/descWhereWork"
-            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintBottom_toBottomOf="@+id/etLocation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editText"
+            app:layout_constraintTop_toTopOf="@+id/etLocation"
             app:srcCompat="@drawable/info3x" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/infoWorkAllDays"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/descInfoKollektiv"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/radioGroup2"
+            app:srcCompat="@drawable/info3x" />
+
+        <ImageView
+            android:id="@+id/infoPercentageOfFulltime"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/descInfoKollektiv"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/seekBar"
+            app:layout_constraintVertical_bias="0.83"
+            app:srcCompat="@drawable/info3x" />
+
+        <ImageView
+            android:id="@+id/infoCollectiveAgreement"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:contentDescription="@string/descInfoKollektiv"
-            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintBottom_toBottomOf="@+id/rgCollectiveAgreement"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/radioGroup"
+            app:layout_constraintTop_toTopOf="@+id/rgCollectiveAgreement"
             app:srcCompat="@drawable/info3x" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etLocation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/hintWhereWorkTextField"
+            android:theme="@style/EditTextTheme"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            android:layout_marginRight="24dp" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation"
+            android:layout_marginRight="32dp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvWorkedHours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/labelHours"
+            android:textColor="@color/taxiBlack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText"
+            app:layout_constraintTop_toBottomOf="@+id/etLocation"
             android:layout_marginRight="8dp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etWorkedHours"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="32dp"
             android:ems="10"
             android:hint="@string/hintHoursTextField"
+            android:theme="@style/EditTextTheme"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            android:layout_marginRight="24dp" />
+            app:layout_constraintTop_toBottomOf="@+id/tvWorkedHours"
+            android:layout_marginRight="32dp" />
 
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginTop="8dp"
             android:max="100"
-            android:progress="100"
-            android:maxHeight="3dp"
+            android:maxHeight="5dp"
             android:minHeight="3dp"
-            android:thumbTint="@color/taxiOrange"
+            android:progress="100"
             android:progressDrawable="@drawable/seekbar"
+            android:thumb="@drawable/seekbar_thumb"
+            android:thumbTint="@color/taxiOrange"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            android:layout_marginRight="24dp" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentageOfFulltime"
+            android:layout_marginRight="32dp"
+            tools:targetApi="lollipop" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvPercentageOfFulltime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/labelHoursToWorkAgreement"
+            android:textColor="@color/taxiBlack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2"
+            app:layout_constraintTop_toBottomOf="@+id/etWorkedHours"
             android:layout_marginRight="8dp" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvCurrentPercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -220,8 +253,59 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintStart_toEndOf="@+id/tvPercentageOfFulltime"
+            app:layout_constraintTop_toBottomOf="@+id/etWorkedHours" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            android:layout_marginRight="8dp">
+
+
+            <RadioButton
+                android:id="@+id/radioButtonYes2"
+                android:buttonTint="@color/taxiBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="50"
+                android:checked="true"
+                android:text="@string/yes"
+                tools:targetApi="lollipop" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:buttonTint="@color/taxiBlack"
+                android:text="@string/no"
+                tools:targetApi="lollipop" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+
+            android:text="@string/workAllWeekDays"
+            android:textColor="@color/taxiBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar"
+            android:layout_marginRight="8dp" />
+
     </android.support.constraint.ConstraintLayout>
 
 
