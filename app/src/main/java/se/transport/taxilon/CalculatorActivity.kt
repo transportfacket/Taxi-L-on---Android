@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.Toolbar
@@ -17,30 +18,31 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import android.widget.RadioGroup
-
-
+import kotlin.math.roundToInt
 
 
 class CalculatorActivity : AppCompatActivity() {
 
+    private val CALL_PERMISSION_CODE = 1
 
 
 
     var TAG: String = ""
 
 
-    val garantiLonSthml = 19572
-    val garantiLon = 19211
-    val garantiTimmar = 166.4
+    val guaranteeSalarySthlm = 19572.0
+    val guaranteeSalary = 19211.0
+    val guaranteeHours = 166.4
+    val guaranteeHoursWeekdays = 174.0
     var city = ""
-    var hours = 0
+
     var arbetstidsmatt = 0
     var garanti = 0
     var timLon = 0
     var lon = 0
     var realLon = 0
 
-    var percentageOfFullTime = 0
+    var percentageOfFullTime = 100
     lateinit var kollektivYes : RadioButton
     lateinit var kollektivNo : RadioButton
     lateinit var seekBar : SeekBar
@@ -69,8 +71,27 @@ class CalculatorActivity : AppCompatActivity() {
         seekBar()
 
         radioGroupCollectiveAgreement()
+
+
+        calculateButton.setOnClickListener {
+            when(hasCollectiveAgreement){
+
+                true -> {
+
+                    val test = calculateSalaryBy(whereDoIWork(etLocation.text.toString()), etWorkedHours.text.toString().toInt(), percentageOfFullTime, true )
+
+                    Toast.makeText(this, test.roundToInt().toString(), Toast.LENGTH_SHORT).show()
+                }
+
+                false -> {
+
+                }
+
+            }
+
         }
 
+    }
 
 
     fun seekBar(){
@@ -115,7 +136,7 @@ class CalculatorActivity : AppCompatActivity() {
                     R.id.radioButtonNo ->{
                        hasCollectiveAgreement = false
                         calculateButton.setBackgroundResource(R.drawable.button_bg_rounded_corners_grey)
-                        alertDialog()
+                       infoDialog("Inget kollektivavtal - Ingen garantilön", "För att bli")
 
                     }
                 }
@@ -136,14 +157,8 @@ class CalculatorActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         val tvToolBar = findViewById<TextView>(R.id.tvToolbarTitle) as TextView
         tvToolBar.text = getString(R.string.calculatorButtonString)
-
-
-
         toolBar.setPadding(0, 0, 0, 0)//for tab otherwise give space in tab
         toolBar.setContentInsetsAbsolute(0, 0)
-
-
-
     }
 
     fun backButton(v: View){
@@ -151,31 +166,15 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
 
-    fun calculatorButton(v: View){
-
-        when(hasCollectiveAgreement){
-
-            true -> {
-
-                calculateSalaryBy(whereDoIWork(etLocation.text.toString()), etWorkedHours.text.toString().toInt(), percentageOfFullTime, true )
-            }
-
-            false -> {
-
-            }
-
-        }
 
 
 
 
-    }
 
 
 
-    @SuppressLint("MissingPermission")
-    fun alertDialog (){
 
+    fun infoDialog (title: String, message: String){
 
         val builder: AlertDialog.Builder
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -183,38 +182,21 @@ class CalculatorActivity : AppCompatActivity() {
         } else {
             builder = AlertDialog.Builder(this)
         }
-        builder.setTitle("Inget kollektivavtal - Ingen garantilön")
+        builder.setTitle(title)
                 .setCancelable(false)
-                .setMessage("Denna app utvecklades av Patrik Persson på Transports avdelning 12 i Malmö")
+                .setMessage(message)
                 .setPositiveButton("OK", { _, _ ->
-
-
                 })
-                .setNeutralButton("Ring Transport", { _, _ ->
-                    setupPermissions()
-                    val intent = Intent(Intent.ACTION_CALL)
-                    intent.data = Uri.parse("tel:0104803000")
-                    startActivity(intent)
-
-
-                })
-
-
-
                 .show()
 
     }
 
 
 
-    private fun setupPermissions() {
-        val permission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CALL_PHONE)
 
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i(TAG, "Permission to record denied")
-        }
-    }
+
+
+
 
 
 
@@ -230,15 +212,38 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
 
-    fun calculateSalaryBy(isLocationSthlm: Boolean, workedHours: Int, percentageOfFulltime: Int, workAllWeekDays: Boolean): Int{
+    fun calculateSalaryBy(isLocationSthlm: Boolean, workedHours: Int, percentageOfFulltime: Int, workAllWeekDays: Boolean): Double{
+
+        var baseSalaryToCalculateFrom: Double
+        if (isLocationSthlm == true) {
+            baseSalaryToCalculateFrom = guaranteeSalarySthlm
+
+
+        }else {
+
+            baseSalaryToCalculateFrom = guaranteeSalary
+        }
 
 
 
+        val returnSalary: Double
+
+        val percantageOfGuaranteeHours: Double = (guaranteeHours / 100) * percentageOfFulltime
 
 
-        return 0
 
+        if (workedHours <= percantageOfGuaranteeHours) {
+            returnSalary = baseSalaryToCalculateFrom / 100 * percentageOfFulltime
+
+
+        }else {
+
+            returnSalary = baseSalaryToCalculateFrom / guaranteeHours * workedHours
+        }
+        return returnSalary
     }
+
+
 
 
 }
