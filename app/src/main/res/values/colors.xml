@@ -7,4 +7,6 @@
     <color name="taxiOrange">#fad100</color>
     <color name="taxiBlack">#141414</color>
     <color name="grey">#808080</color>
+    <color name="darkGrey">#555555</color>
+    <color name="redAccent">#941100</color>
 </resources>

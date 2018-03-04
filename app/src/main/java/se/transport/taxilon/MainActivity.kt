@@ -3,10 +3,7 @@ package se.transport.taxilon
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 
-
-import android.os.Build
 import android.support.v7.app.AlertDialog
 import android.media.MediaPlayer
 import android.widget.Button
@@ -15,11 +12,11 @@ import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var calculatorButton: Button
-    lateinit var monthlyButton: Button
-    lateinit var faqButton: Button
-    lateinit var logoButton: ImageView
-    var tapCount = 0
+    private lateinit var calculatorButton: Button
+    private lateinit var monthlyButton: Button
+    private lateinit var faqButton: Button
+    private lateinit var logoButton: ImageView
+    private var tapCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,11 +44,12 @@ class MainActivity : AppCompatActivity() {
 
 
         logoButton.setOnClickListener {
-            if (tapCount < 11) {
-                tapCount += 1
-            } else {
-                alertDialog()
-                tapCount = 0
+            when {
+                tapCount < 11 -> tapCount += 1
+                else -> {
+                    alertDialog()
+                    tapCount = 0
+                }
             }
         }
 
@@ -65,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun alertDialog (){
+    private fun alertDialog (){
         val mPlayer = MediaPlayer.create(this, R.raw.audio)
         mPlayer.start()
 

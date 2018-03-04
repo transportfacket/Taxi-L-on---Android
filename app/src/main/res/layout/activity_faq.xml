@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="se.transport.taxilon.FaqActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+
+        />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:layout_constraintVertical_bias="1.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv11"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv12"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv13"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv14"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv16"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv17"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv18"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv19"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv20"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv21"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView20"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv22"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv23"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv24"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/tv25"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

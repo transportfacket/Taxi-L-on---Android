@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="se.transport.taxilon.ShowResultActivity">
+
+        <Button
+            android:id="@+id/bClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+
+
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:text="@string/closeButton"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvResult"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCalculatedSalary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/darkGrey"
+            android:textSize="74sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvResultWithVaccation"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCalculatedSalary" />
+
+        <TextView
+            android:id="@+id/tvCalculatedTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/redAccent"
+            android:textSize="74sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/tvAverageHourlyWage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCalculatedTotal"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text=""
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/tvCalculatedTotal"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tvVaccationPay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tvVaccationPay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp" />
+
+
+</android.support.constraint.ConstraintLayout>
