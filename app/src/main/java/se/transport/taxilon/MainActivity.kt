@@ -6,8 +6,10 @@ import android.os.Bundle
 
 import android.support.v7.app.AlertDialog
 import android.media.MediaPlayer
+import android.net.Uri
 import android.widget.Button
 import android.widget.ImageView
+import spencerstudios.com.bungeelib.Bungee
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var monthlyButton: Button
     private lateinit var faqButton: Button
     private lateinit var logoButton: ImageView
+    private lateinit var joinButton: Button
     private var tapCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,20 +29,32 @@ class MainActivity : AppCompatActivity() {
         monthlyButton = findViewById(R.id.monthlyButton)
         faqButton = findViewById(R.id.faqButton)
         logoButton = findViewById(R.id.logo)
+        joinButton = findViewById(R.id.joinButton)
 
         calculatorButton.setOnClickListener{
             val intent = Intent(this, CalculatorActivity::class.java)
             startActivity(intent)
+            Bungee.slideLeft(this)
+
         }
 
         monthlyButton.setOnClickListener {
             val intent = Intent(this, MonthlyActivity::class.java)
             startActivity(intent)
+            Bungee.slideLeft(this)
         }
 
         faqButton.setOnClickListener {
             val intent = Intent(this, FaqActivity::class.java)
             startActivity(intent)
+            Bungee.slideLeft(this)
+        }
+
+        joinButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.transport.se/blimedlem/"))
+            startActivity(intent)
+            Bungee.shrink(this)
+
         }
 
 
@@ -80,6 +95,20 @@ class MainActivity : AppCompatActivity() {
 
 
                 .show()
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        Bungee.shrink(this)
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Bungee.shrink(this)
+
 
     }
 

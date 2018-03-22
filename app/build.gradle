@@ -8,10 +8,11 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "se.transport.taxilon"
-        minSdkVersion 15
+
+        minSdkVersion 16
         targetSdkVersion 27
-        versionCode 4
-        versionName "0.5b"
+        versionCode 8
+        versionName "0.85"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -23,6 +24,9 @@ android {
 }
 
 dependencies {
+    compile 'com.github.Binary-Finery:Bungee:master-SNAPSHOT'
+
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.0'
@@ -32,3 +36,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+
+

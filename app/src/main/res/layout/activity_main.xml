@@ -162,6 +162,22 @@
             app:srcCompat="@drawable/logo3x"
             android:layout_marginRight="8dp" />
 
+        <Button
+            android:id="@+id/joinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:background="@drawable/button_bg_rounded_corners_black"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/not_member"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/logo"
+            app:layout_constraintTop_toTopOf="@+id/logo" />
+
     </android.support.constraint.ConstraintLayout>
 
 

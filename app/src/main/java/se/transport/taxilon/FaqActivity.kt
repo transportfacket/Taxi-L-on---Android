@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.TextView
+import spencerstudios.com.bungeelib.Bungee
 
 class FaqActivity : AppCompatActivity() {
 
@@ -15,6 +16,12 @@ class FaqActivity : AppCompatActivity() {
         setupActionBar()
     }
 
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Bungee.slideRight(this)
+
+    }
 
 
     private fun setupActionBar(){
@@ -30,5 +37,6 @@ class FaqActivity : AppCompatActivity() {
     fun backButton(v: View) {
 
         onBackPressed()
+        Bungee.slideRight(this)
     }
 }

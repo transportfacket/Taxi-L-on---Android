@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import spencerstudios.com.bungeelib.Bungee
 
 class MonthlyActivity : AppCompatActivity() {
 
@@ -22,7 +23,11 @@ class MonthlyActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Bungee.slideRight(this)
 
+    }
     fun setupActionBar(){
         val toolBar = findViewById<Toolbar>(R.id.app_bar) as Toolbar
         toolBar.title=""
@@ -35,5 +40,6 @@ class MonthlyActivity : AppCompatActivity() {
 
     fun backButton(v: View){
         onBackPressed()
+        Bungee.slideRight(this)
     }
 }
