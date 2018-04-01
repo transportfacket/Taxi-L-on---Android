@@ -52,8 +52,8 @@
     <string name="bodyPercentageOfFulltimeInfoDialog">You will find that on your certificate of employment . The working time measurement is the % of full time that you must work</string>
     <string name="bodyWorkAllDaysInfoDialog">If you can be scheduled all the days of the week, then you should choose YES. However, if you only schedule Monday to Friday weekend, choose NO.</string>
     <string name="titleWorkAllDaysInfoDialog">Are you scheduled for all the days of the week?</string>
-    <string name="tvResult">Your monthly wage must be at least:</string>
-    <string name="tvResultWithVaccation">* Monthly wage + vaccation pay:</string>
+    <string name="tvResult">Your guaranteed wage must be at least:</string>
+    <string name="tvResultWithVaccation">* Guaranteed wage + vaccation pay:</string>
     <string name="tvAverageHourlyWage">Average hourly wage:</string>
     <string name="tvVaccationPay">* Vacction pay:</string>
     <string name="tvMonthly1">"From the 1st December 2017, employers must pay a monthly wage to those drivers who only drive community paid journeys negotiated after that date. For example, service transportation, medical transport and school lifts. The employer may also choose to pay those that drive a mixture of journeys (community paid taxi traffic and other taxi traffic) with a monthly wage according to the collective agreement. "</string>
@@ -63,6 +63,7 @@
     <string name="bitraden">Co-drivers (employees who sit beside the driver and do not have a taxi driver permit)</string>
     <string name="afterTwoYearsTitle">Wages for drivers after two years in the job</string>
     <string name="startWage">Starting wage for drivers</string>
-    <string name="vaccationPayResultInfo">* In cases where holiday pay is paid out at each wage point, it must be at least as much as the stated sum. Otherwise, the pay must be collected and paid out in conjunction with holiday being taken.</string>
+    <string name="vaccationPayResultInfo">NOTE, the calculation is based if you are employed full time, provided you have not been absent for example; illness, care of children or leave of absence. * In cases where holiday pay is paid out at each wage point, it must be at least as much as the stated sum.</string>
     <string name="no_collective_agreement">No collective agreement - No guaranteed wage</string>
+    <string name="tvInfoCalulator">If you drive with a percentage wage at a company with a collective agreement have the right to a guaranteed wage. This means that you are entitled to a minimum payroll - no matter how much you drive. Enter your city and how many hours you worked the month you want to calculate your salary.</string>
 </resources>

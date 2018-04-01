@@ -51,8 +51,8 @@
     <string name="titleWorkAllDaysInfoDialog">Schemaläggs du alla veckans dagar?</string>
     <string name="bodyWorkAllDaysInfoDialog">Kan du schemaläggas alla dagar i veckan ska du välja JA.\nOm du däremot bara schemaläggs måndag till fredag helgfri vecka ska du välja NEJ.</string>
     <string name="closeButton">Stäng</string>
-    <string name="tvResult">Din månadslön ska minst vara:</string>
-    <string name="tvResultWithVaccation">*Månadslön + semesterersättning</string>
+    <string name="tvResult">Din garantilön ska minst vara:</string>
+    <string name="tvResultWithVaccation">* Garantilön + semesterersättning</string>
     <string name="tvAverageHourlyWage">Genomsnittlig timlön:</string>
     <string name="tvVaccationPay">*Semesterersättning:</string>
     <string name="tvMonthly1">Från och med den 1 december 2017 måste arbetsgivare betala månadslön till de anställda som enbart kör samhällsbetalda körningar som är upphandlade efter samma datum. Exempelvis färdtjänst, sjukresor och skolskjuts. \n\nArbetsgivaren kan också välja att avlöna även de som kör blandade körningar (Samhällsbetald taxitrafik och övrig taxitrafik) med månadslön enligt kollektivavtalet.</string>
@@ -62,7 +62,8 @@
     <string name="bitraden">Biträden</string>
     <string name="afterTwoYearsTitle">Lön för förare efter 2år i yrket</string>
     <string name="startWage">Begynnelselön för förare</string>
-    <string name="vaccationPayResultInfo">* I det fall semesterersättning utbetalas vid varje lönetillfälle skall den minst vara den angivna summan.  I annat fall skall ersättningen samlas ihopa och utbetalas i samband med att man har semester.</string>
+    <string name="vaccationPayResultInfo">OBS. Uträkningen baseras på att du är anställd på heltid, förutsatt att du inte varit frånvarande exempelvis; sjukdom, VAB eller tjänstledighet. * Om semesterersättning betalas ut vid varje löneutbetalningen skall den minst vara den angivna summan.</string>
     <string name="not_member">Inte medlem än?</string>
     <string name="no_collective_agreement">Inget kollektivavtal - Ingen garantilön</string>
+    <string name="tvInfoCalulator">Du som kör på procentlön hos en åkare med kollektivavtal har rätt till garantilön. Det betyder att du har rätt till en lägstalön – oavsett hur mycket du kör in. Fyll i din ort och hur många timmar du arbetat den månad du vill beräkna din lön för.</string>
 </resources>

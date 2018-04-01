@@ -18,12 +18,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var monthlyButton: Button
     private lateinit var faqButton: Button
     private lateinit var logoButton: ImageView
+    private lateinit var background: ImageView
     private lateinit var joinButton: Button
     private var tapCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        background = findViewById(R.id.backgroundImage) as ImageView
+
 
         calculatorButton = findViewById(R.id.calculatorButton)
         monthlyButton = findViewById(R.id.monthlyButton)
@@ -35,29 +38,22 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CalculatorActivity::class.java)
             startActivity(intent)
             Bungee.slideLeft(this)
-
         }
-
         monthlyButton.setOnClickListener {
             val intent = Intent(this, MonthlyActivity::class.java)
             startActivity(intent)
             Bungee.slideLeft(this)
         }
-
         faqButton.setOnClickListener {
             val intent = Intent(this, FaqActivity::class.java)
             startActivity(intent)
             Bungee.slideLeft(this)
         }
-
         joinButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.transport.se/blimedlem/"))
             startActivity(intent)
             Bungee.shrink(this)
-
         }
-
-
         logoButton.setOnClickListener {
             when {
                 tapCount < 11 -> tapCount += 1
@@ -69,11 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
-
-
-
+    
 
 
 
@@ -91,25 +83,17 @@ class MainActivity : AppCompatActivity() {
                     mPlayer.stop()
 
                 })
-
-
-
                 .show()
-
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-
         Bungee.shrink(this)
-
     }
 
     override fun onStop() {
         super.onStop()
         Bungee.shrink(this)
-
-
     }
 
 }

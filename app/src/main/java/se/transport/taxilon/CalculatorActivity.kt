@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.Toolbar
 import android.view.View
@@ -24,10 +25,11 @@ class CalculatorActivity : AppCompatActivity() {
     private lateinit var kollektivGroup: RadioGroup
     private lateinit var calculateButton: Button
     private lateinit var infoCollectiveAgreement: ImageView
+    private lateinit var layout: ConstraintLayout
     private lateinit var infoLocation: ImageView
     private lateinit var infoWorkedHours: ImageView
     private var hasCollectiveAgreement: Boolean = true
-
+    data class PassOnValues(val salary: Double, val hours: Double)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
@@ -36,6 +38,8 @@ class CalculatorActivity : AppCompatActivity() {
         alertInfoDialogs()
         calculateButton.setOnClickListener {
             startCheckAndCalculateBeforePassing()
+
+
 
 
         }
@@ -57,6 +61,9 @@ class CalculatorActivity : AppCompatActivity() {
         infoCollectiveAgreement = findViewById(R.id.infoCollectiveAgreement)
         infoLocation = findViewById(R.id.infoLocation)
         infoWorkedHours = findViewById(R.id.infoWorkedHours)
+        layout = findViewById(R.id.layout)
+
+
 
 
 
@@ -124,12 +131,13 @@ class CalculatorActivity : AppCompatActivity() {
                     etWorkedHours.setError(getString(R.string.notEmpty))
 
                 } else{
-                    val salary = calculateSalaryBy(whereDoIWork(etLocation.text.toString()), etWorkedHours.text.toString().toInt())
+                    val (salary, hours) = calculateSalaryBy(whereDoIWork(etLocation.text.toString()), etWorkedHours.text.toString().replace(",", ".").toDouble())
                     val intent = Intent(this, ShowResultActivity::class.java)
 
 
 
-                    intent.putExtra(AppConstants.PASSDATAKEY, salary.roundToInt().toString())
+                    intent.putExtra(AppConstants.PASSDATAKEY, salary)
+                    intent.putExtra(AppConstants.PASSDATAKEY2, hours)
 
                     startActivity(intent)
 
@@ -204,7 +212,7 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
 
-    private fun calculateSalaryBy(isLocationSthlm: Boolean, workedHours: Int): Double{
+    private fun calculateSalaryBy(isLocationSthlm: Boolean, workedHours: Double): PassOnValues{
 
         val baseSalaryToCalculateFrom: Double = when (isLocationSthlm) {
             true -> AppConstants.GUARANTEESALARYSTHLM
@@ -226,7 +234,7 @@ class CalculatorActivity : AppCompatActivity() {
 
 
 
-        return returnSalary
+        return PassOnValues(returnSalary, workedHours)
     }
 
 

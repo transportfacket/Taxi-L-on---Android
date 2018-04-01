@@ -11,14 +11,17 @@ import spencerstudios.com.bungeelib.Bungee
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
+import kotlin.math.roundToInt
 
 
 class ShowResultActivity : AppCompatActivity() {
 
-    private var passedSalary: String = ""
+    private var passedSalary: Double = 0.0
+    private var passedHours: Double = 0.0
 
-    private var calculateHolidayPay = 0
-    private var calculateAverageHourlyWage = 0
+    private var calculateHolidayPay = 0.0
+    private var calculateAverageHourlyWage = 0.0
+    private var hourlyWage = 0
     private lateinit var calculatedSalaryTextview: TextView
     private lateinit var calculatedTotalSalaryTextView: TextView
     private lateinit var closeButton: Button
@@ -42,19 +45,26 @@ class ShowResultActivity : AppCompatActivity() {
 
         calculatedSalaryTextview.text = getString(R.string.tvCalculatedSalary, formattedSalary.toString())
 
-        calculateHolidayPay = passedSalary.toInt() / 100 * 13
+        calculateHolidayPay = passedSalary / 100 * 13
+
+
+
+        calculateAverageHourlyWage = passedSalary / passedHours
 
 
 
 
 
+        val formattedHourlyWage = "%.2f".format(calculateAverageHourlyWage)
 
-        val totalSalaryWithHoliday = passedSalary.toInt() + calculateHolidayPay
-        val formattedTotalSalary = formatter.format(totalSalaryWithHoliday)
-        val formattedVaccationPay= formatter.format(calculateHolidayPay)
+        val totalSalaryWithHoliday = passedSalary + calculateHolidayPay
+        val formattedTotalSalary = formatter.format(totalSalaryWithHoliday.roundToInt())
+        val formattedVaccationPay= formatter.format(calculateHolidayPay.roundToInt())
+
         calculatedTotalSalaryTextView.text = getString(R.string.tvCalculatedSalary, formattedTotalSalary.toString())
 
         vaccationPay.text = getString(R.string.tvCalculatedSalary, formattedVaccationPay.toString())
+        averageHourlyWage.text = getString(R.string.tvCalculatedHourlyWage, formattedHourlyWage)
 
 
 
@@ -71,6 +81,7 @@ class ShowResultActivity : AppCompatActivity() {
         averageHourlyWage = findViewById(R.id.tvAverageHourlyWage)
         calculatedTotalSalaryTextView = findViewById(R.id.tvCalculatedTotal)
         vaccationPay = findViewById(R.id.tvVaccationPay)
+
         closeButton = findViewById(R.id.bClose)
         closeButton.setOnClickListener {
 
@@ -81,7 +92,8 @@ class ShowResultActivity : AppCompatActivity() {
 
     private fun receivingValue() {
         val intent = intent
-        passedSalary = intent.getStringExtra(AppConstants.PASSDATAKEY)
+        passedSalary = intent.getDoubleExtra(AppConstants.PASSDATAKEY, 0.0)
+        passedHours = intent.getDoubleExtra(AppConstants.PASSDATAKEY2, 0.0 )
 
     }
 
