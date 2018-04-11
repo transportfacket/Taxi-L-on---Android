@@ -9,6 +9,8 @@ import android.media.MediaPlayer
 import android.net.Uri
 import android.widget.Button
 import android.widget.ImageView
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_monthly.*
 import spencerstudios.com.bungeelib.Bungee
 
 
@@ -18,14 +20,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var monthlyButton: Button
     private lateinit var faqButton: Button
     private lateinit var logoButton: ImageView
-    private lateinit var background: ImageView
     private lateinit var joinButton: Button
     private var tapCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        background = findViewById(R.id.backgroundImage) as ImageView
+
 
 
         calculatorButton = findViewById(R.id.calculatorButton)
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    
+
 
 
 

@@ -53,9 +53,9 @@
     <string name="bodyWorkAllDaysInfoDialog">If you can be scheduled all the days of the week, then you should choose YES. However, if you only schedule Monday to Friday weekend, choose NO.</string>
     <string name="titleWorkAllDaysInfoDialog">Are you scheduled for all the days of the week?</string>
     <string name="tvResult">Your guaranteed wage must be at least:</string>
-    <string name="tvResultWithVaccation">* Guaranteed wage + vaccation pay:</string>
+    <string name="tvResultWithVaccation">* Guaranteed wage + holiday pay:</string>
     <string name="tvAverageHourlyWage">Average hourly wage:</string>
-    <string name="tvVaccationPay">* Vacction pay:</string>
+    <string name="tvVaccationPay">* Holiday pay:</string>
     <string name="tvMonthly1">"From the 1st December 2017, employers must pay a monthly wage to those drivers who only drive community paid journeys negotiated after that date. For example, service transportation, medical transport and school lifts. The employer may also choose to pay those that drive a mixture of journeys (community paid taxi traffic and other taxi traffic) with a monthly wage according to the collective agreement. "</string>
     <string name="hourlyWage1th1664">Hourly wage, 1/166,4 of monthly wage:</string>
     <string name="hourlyWage1th174">Hourly wage, 1/174 of monthly wage:</string>

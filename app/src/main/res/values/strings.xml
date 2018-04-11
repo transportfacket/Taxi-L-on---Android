@@ -1,85 +1,85 @@
 
 <resources>
     <string name="app_name" translatable="false">Taxilön</string>
-    <string name="calculatorButtonString">Garantilöneräknare</string>
-    <string name="monthlyButtoString">Månadslön</string>
-    <string name="faqButtonString">Vanliga frågor</string>
-    <string name="back">Tillbaka</string>
-    <string name="calculateButton">Räkna ut</string>
-    <string name="goBackButtonDescription">Gå tillbaka</string>
-    <string name="labelKollektivavtal">Finns det kollektivavtal på din arbetsplats?</string>
-    <string name="yes">Ja</string>
-    <string name="no">Nej</string>
-    <string name="labelWhereWork">Var i landet kör du? Stad eller ort:</string>
-    <string name="descInfoKollektiv">Info om kollektivaval</string>
-    <string name="descWhereWork">Info om ort</string>
-    <string name="hintWhereWorkTextField">ex. Malmö</string>
-    <string name="labelHours">Hur många timmar har du arbetat?</string>
-    <string name="hintHoursTextField">ex. 174</string>
-    <string name="labelHoursToWorkAgreement">Arbetstidsmått:</string>
-    <string name="placeHolderPercentage">100%</string>
-    <string name="descMonthlySalary">Månadslön</string>
-    <string name="descLogo">Tryck 12 gånger</string>
-    <string name="descWorkedHours">Info om arbetade timmar</string>
-    <string name="workAllWeekDays">Schemaläggs du alla veckans dagar?</string>
-    <string name="monthlysalary">Månadslön</string>
-    <string name="faq">Vanliga frågor</string>
-    <string name="title_activity_faq">FaqActivity</string>
-    <string name="title_activity_monthly">MonthlyActivity</string>
-    <string name="tv14">Du omfattas av kollektivavtal om din åkare är medlem i Biltrafikens Arbetsgivareförbund eller har tecknat avtal direkt med Transport.  Fråga din åkare eller kontrollera det med din lokala Transportavdelning. Ring 010–480 30 00 och tala om var du arbetar. Vi behöver då din arbetsgivares organisationsnummer, det står på de kvitton som kunden får.</string>
-    <string name="tv16">Hur räknas timlönen fram?</string>
-    <string name="tv13">Hur vet jag om jag omfattas av kollektivavtal?</string>
-    <string name="tv12">Du som arbetar på ett åkeri med kollektivavtal och kör på procentlön har rätt till garantilön.</string>
-    <string name="tv11">Vem omfattas av garantilön?</string>
-    <string name="tv17">Om du arbetar alla veckans dagar är 166,4 timmar/månad den uträknade arbetstid som du arbetar i genomsnitt under ett år som heltidsanställd. Parterna har enats om denna tid som en beräkningsgrund för att räkna fram bland annat timlön. Arbetar du endast vardagar (måndag – fredag, helgfri vecka) är beräkningsgrunden 174 timmar istället.</string>
-    <string name="tv18">Vilka har rätt till månadslön?</string>
-    <string name="tv19">Från och med den 1 december 2017 måste arbetsgivare betala månadslön till de anställda som enbart kör samhällsbetalda körningar som är upphandlade efter samma datum. Exempelvis färdtjänst, sjukresor och skolskjuts.   Arbetsgivaren kan också välja att avlöna även de som kör blandade körningar (Samhällsbetald taxitrafik och övrig taxitrafik) med månadslön enligt kollektivavtalet.</string>
-    <string name="tv20">Om min lön inte stämmer, vad kan jag göra?</string>
-    <string name="tv21">Om du misstänker att din lön inte stämmer överens med gällande kollektivavtal kan du räkna ut din rätta lön i den här appen.   Skulle det visa sig att din lön inte stämmer ska du påpeka detta för din arbetsgivare. Får du problem kan du som medlem kontakta din lokala avdelning inom Transport.</string>
-    <string name="tv22">Vilken tid räknas som arbetstid?</string>
-    <string name="tv23">All arbetstid räknas som arbetstid, det vill säga den tid som du står till arbetsgivarens förfogande. Rast är inte arbetstid, det är egen tid, och när man har rast står man inte heller till arbetsgivarens förfogande.   Det är därför viktigt att du loggar ur systemet när du har rast. Detta för att beräkningen av din arbetstid och din lön ska bli korrekt.</string>
-    <string name="tv24">Lönebesked</string>
-    <string name="tv25">Du som förare har rätt att få en lönespecifikation av din arbetsgivare. Där ska det också stå hur mycket skatt som har dragits.   På lönespecifikationen ska det även framgå hur många timmar du arbetat och varit frånvarande under perioden samt betalda och obetalda semesterdagar. Alla avtalsreglerade ersättningar ska specificeras, ex. Ob-ersättning, övertid mm.   Kör du på procentlön ska även inkört lönegrundande belopp redovisas (kan ske via bilaga).   Du som förare ska kvittera avlöningen där den inte betalas ut via bank, postgiro eller på annat betryggande sätt.</string>
-    <string name="notEmpty">Detta fältet kan inte vara tomt</string>
-    <string name="titleLocationInfoDialog">Var i landet kör du?</string>
-    <string name="bodyLocationInfoDialog">Här skriver du in vilken ort som du är stationerad på.</string>
-    <string name="titleWorkedHoursInfoDialog">Hur många timmar har du arbetat?</string>
-    <string name="bodyWorkedHoursInfoDialog">Här skriver du in hur många timmar du arbetat på den månad du vill räkna ut din garantilön.</string>
-    <string name="titleCollectiveAgreementInfoDialog">Har du kollektivavtal på företaget?</string>
-    <string name="bodyCollectiveAgreementInfoDialog">Garantilön gäller bara för dig som arbetar på ett åkeri som har kollektivavtal med Transport. \n \n Vet du inte om det finns kollektivavtal där du arbetar så ring Transport och kolla upp det.</string>
-    <string name="titlePercentageOfFulltimeInfoDialog">Arbetstidsmått</string>
-    <string name="bodyPercentageOfFulltimeInfoDialog">Du hittar detta på ditt anställningsbevis. Arbetstidsmått är hur många % av heltid som du ska arbeta</string>
-    <string name="titleWorkAllDaysInfoDialog">Schemaläggs du alla veckans dagar?</string>
-    <string name="bodyWorkAllDaysInfoDialog">Kan du schemaläggas alla dagar i veckan ska du välja JA. Om du däremot bara schemaläggs måndag till fredag helgfri vecka ska du välja NEJ.</string>
-    <string name="closeButton">Stäng</string>
-    <string name="tvResult">Din garantilön ska minst vara:</string>
-    <string name="tvResultWithVaccation">* Garantilön + semesterersättning</string>
-    <string name="tvAverageHourlyWage">Genomsnittlig timlön:</string>
-    <string name="tvVaccationPay">*Semesterersättning:</string>
+    <string name="calculatorButtonString" translatable="false">Garantilöneräknare</string>
+    <string name="monthlyButtoString" translatable="false">Månadslön</string>
+    <string name="faqButtonString" translatable="false">Vanliga frågor</string>
+    <string name="back" translatable="false">Tillbaka</string>
+    <string name="calculateButton" translatable="false">Räkna ut</string>
+    <string name="goBackButtonDescription" translatable="false">Gå tillbaka</string>
+    <string name="labelKollektivavtal" translatable="false">Finns det kollektivavtal på din arbetsplats?</string>
+    <string name="yes" translatable="false">Ja</string>
+    <string name="no" translatable="false">Nej</string>
+    <string name="labelWhereWork" translatable="false">Var i landet kör du? Stad eller ort:</string>
+    <string name="descInfoKollektiv" translatable="false">Info om kollektivaval</string>
+    <string name="descWhereWork" translatable="false">Info om ort</string>
+    <string name="hintWhereWorkTextField" translatable="false">ex. Malmö</string>
+    <string name="labelHours" translatable="false">Hur många timmar har du arbetat?</string>
+    <string name="hintHoursTextField" translatable="false">ex. 174</string>
+    <string name="labelHoursToWorkAgreement" translatable="false">Arbetstidsmått:</string>
+    <string name="placeHolderPercentage" translatable="false">100%</string>
+    <string name="descMonthlySalary" translatable="false">Månadslön</string>
+    <string name="descLogo" translatable="false">Tryck 12 gånger</string>
+    <string name="descWorkedHours" translatable="false">Info om arbetade timmar</string>
+    <string name="workAllWeekDays" translatable="false">Schemaläggs du alla veckans dagar?</string>
+    <string name="monthlysalary" translatable="false">Månadslön</string>
+    <string name="faq" translatable="false">Vanliga frågor</string>
+    <string name="title_activity_faq" translatable="false">FaqActivity</string>
+    <string name="title_activity_monthly" translatable="false">MonthlyActivity</string>
+    <string name="tv14" translatable="false">Du omfattas av kollektivavtal om din åkare är medlem i Biltrafikens Arbetsgivareförbund eller har tecknat avtal direkt med Transport.  Fråga din åkare eller kontrollera det med din lokala Transportavdelning. Ring 010–480 30 00 och tala om var du arbetar. Vi behöver då din arbetsgivares organisationsnummer, det står på de kvitton som kunden får.</string>
+    <string name="tv16" translatable="false">Hur räknas timlönen fram?</string>
+    <string name="tv13" translatable="false">Hur vet jag om jag omfattas av kollektivavtal?</string>
+    <string name="tv12" translatable="false">Du som arbetar på ett åkeri med kollektivavtal och kör på procentlön har rätt till garantilön.</string>
+    <string name="tv11" translatable="false">Vem omfattas av garantilön?</string>
+    <string name="tv17" translatable="false">Om du arbetar alla veckans dagar är 166,4 timmar/månad den uträknade arbetstid som du arbetar i genomsnitt under ett år som heltidsanställd. Parterna har enats om denna tid som en beräkningsgrund för att räkna fram bland annat timlön. Arbetar du endast vardagar (måndag – fredag, helgfri vecka) är beräkningsgrunden 174 timmar istället.</string>
+    <string name="tv18" translatable="false">Vilka har rätt till månadslön?</string>
+    <string name="tv19" translatable="false">Från och med den 1 december 2017 måste arbetsgivare betala månadslön till de anställda som enbart kör samhällsbetalda körningar som är upphandlade efter samma datum. Exempelvis färdtjänst, sjukresor och skolskjuts.   Arbetsgivaren kan också välja att avlöna även de som kör blandade körningar (Samhällsbetald taxitrafik och övrig taxitrafik) med månadslön enligt kollektivavtalet.</string>
+    <string name="tv20" translatable="false">Om min lön inte stämmer, vad kan jag göra?</string>
+    <string name="tv21" translatable="false">Om du misstänker att din lön inte stämmer överens med gällande kollektivavtal kan du räkna ut din rätta lön i den här appen.   Skulle det visa sig att din lön inte stämmer ska du påpeka detta för din arbetsgivare. Får du problem kan du som medlem kontakta din lokala avdelning inom Transport.</string>
+    <string name="tv22" translatable="false">Vilken tid räknas som arbetstid?</string>
+    <string name="tv23" translatable="false">All arbetstid räknas som arbetstid, det vill säga den tid som du står till arbetsgivarens förfogande. Rast är inte arbetstid, det är egen tid, och när man har rast står man inte heller till arbetsgivarens förfogande.   Det är därför viktigt att du loggar ur systemet när du har rast. Detta för att beräkningen av din arbetstid och din lön ska bli korrekt.</string>
+    <string name="tv24" translatable="false">Lönebesked</string>
+    <string name="tv25" translatable="false">Du som förare har rätt att få en lönespecifikation av din arbetsgivare. Där ska det också stå hur mycket skatt som har dragits.   På lönespecifikationen ska det även framgå hur många timmar du arbetat och varit frånvarande under perioden samt betalda och obetalda semesterdagar. Alla avtalsreglerade ersättningar ska specificeras, ex. Ob-ersättning, övertid mm.   Kör du på procentlön ska även inkört lönegrundande belopp redovisas (kan ske via bilaga).   Du som förare ska kvittera avlöningen där den inte betalas ut via bank, postgiro eller på annat betryggande sätt.</string>
+    <string name="notEmpty" translatable="false">Detta fältet kan inte vara tomt</string>
+    <string name="titleLocationInfoDialog" translatable="false">Var i landet kör du?</string>
+    <string name="bodyLocationInfoDialog" translatable="false">Här skriver du in vilken ort som du är stationerad på.</string>
+    <string name="titleWorkedHoursInfoDialog" translatable="false">Hur många timmar har du arbetat?</string>
+    <string name="bodyWorkedHoursInfoDialog" translatable="false">Här skriver du in hur många timmar du arbetat på den månad du vill räkna ut din garantilön.</string>
+    <string name="titleCollectiveAgreementInfoDialog" translatable="false">Har du kollektivavtal på företaget?</string>
+    <string name="bodyCollectiveAgreementInfoDialog" translatable="false">Garantilön gäller bara för dig som arbetar på ett åkeri som har kollektivavtal med Transport. \n \n Vet du inte om det finns kollektivavtal där du arbetar så ring Transport och kolla upp det.</string>
+    <string name="titlePercentageOfFulltimeInfoDialog" translatable="false">Arbetstidsmått</string>
+    <string name="bodyPercentageOfFulltimeInfoDialog" translatable="false">Du hittar detta på ditt anställningsbevis. Arbetstidsmått är hur många % av heltid som du ska arbeta</string>
+    <string name="titleWorkAllDaysInfoDialog" translatable="false">Schemaläggs du alla veckans dagar?</string>
+    <string name="bodyWorkAllDaysInfoDialog" translatable="false">Kan du schemaläggas alla dagar i veckan ska du välja JA. Om du däremot bara schemaläggs måndag till fredag helgfri vecka ska du välja NEJ.</string>
+    <string name="closeButton" translatable="false">Stäng</string>
+    <string name="tvResult" translatable="false">Din garantilön ska minst vara:</string>
+    <string name="tvResultWithVaccation" translatable="false">* Garantilön + semesterersättning</string>
+    <string name="tvAverageHourlyWage" translatable="false">Genomsnittlig timlön:</string>
+    <string name="tvVaccationPay" translatable="false">*Semesterersättning:</string>
     <string name="tvCalculatedSalary" translatable="false">%1$s kr</string>
     <string name="tvCalculatedHourlyWage" translatable="false">%1$s kr/h</string>
-    <string name="tvMonthly1">Från och med den 1 december 2017 måste arbetsgivare betala månadslön till de anställda som enbart kör samhällsbetalda körningar som är upphandlade efter samma datum. Exempelvis färdtjänst, sjukresor och skolskjuts. \n\nArbetsgivaren kan också välja att avlöna även de som kör blandade körningar (Samhällsbetald taxitrafik och övrig taxitrafik) med månadslön enligt kollektivavtalet.</string>
-    <string name="hourlyWage1th1664">Timlön, 1/166.4 av månadslönen:</string>
-    <string name="hourlyWage1th174">Timlön, 1/174 av månadslönen:</string>
+    <string name="tvMonthly1" translatable="false">Från och med den 1 december 2017 måste arbetsgivare betala månadslön till de anställda som enbart kör samhällsbetalda körningar som är upphandlade efter samma datum. Exempelvis färdtjänst, sjukresor och skolskjuts. \n\nArbetsgivaren kan också välja att avlöna även de som kör blandade körningar (Samhällsbetald taxitrafik och övrig taxitrafik) med månadslön enligt kollektivavtalet.</string>
+    <string name="hourlyWage1th1664" translatable="false">Timlön, 1/166.4 av månadslönen:</string>
+    <string name="hourlyWage1th174" translatable="false">Timlön, 1/174 av månadslönen:</string>
     <string name="bitradenHourWageAllWeek" translatable="false">123,09 kr</string>
     <string name="bitradenHourWageAllDayWeek" translatable="false">117,71 kr</string>
     <string name="bitradenMonthlyWage" translatable="false">20 482,00 kr</string>
-    <string name="monthlyPayTitle">Månadslön, minst:</string>
-    <string name="bitraden">Biträden</string>
+    <string name="monthlyPayTitle" translatable="false">Månadslön, minst:</string>
+    <string name="bitraden" translatable="false">Biträden</string>
     <string name="fourYearsHourlyWageWeekdays" translatable="false">139,66 kr</string>
     <string name="fourYearsHourlyWageAllDays" translatable="false">133,55 kr</string>
     <string name="fourYearsMonthlyWage" translatable="false">23 239,00 kr</string>
-    <string name="afterTwoYearsTitle">Lön för förare efter 2år i yrket</string>
-    <string name="startWage">Begynnelselön för förare</string>
+    <string name="afterTwoYearsTitle" translatable="false">Lön för förare efter 2år i yrket</string>
+    <string name="startWage" translatable="false">Begynnelselön för förare</string>
     <string name="startHourlyWageAllDays" translatable="false">130,79 kr</string>
     <string name="lowerborder" translatable="false">lower border</string>
     <string name="twoYearsHourlyWageWeekdays" translatable="false">136,77 kr</string>
     <string name="monthlyWageNew" translatable="false">22 758,00 kr</string>
-    <string name="vaccationPayResultInfo">OBS. Uträkningen baseras på att du är anställd på heltid, förutsatt att du inte varit frånvarande exempelvis; sjukdom, VAB eller tjänstledighet. * Om semesterersättning betalas ut vid varje löneutbetalningen skall den minst vara den angivna summan.</string>
-    <string name="not_member">Inte medlem än?</string>
+    <string name="vaccationPayResultInfo" translatable="false">OBS. Uträkningen baseras på att du är anställd på heltid, förutsatt att du inte varit frånvarande exempelvis; sjukdom, VAB eller tjänstledighet. * Om semesterersättning betalas ut vid varje löneutbetalning skall den minst vara den angivna summan.</string>
+    <string name="not_member" translatable="false">Inte medlem än?</string>
     <string name="splashtitle2" translatable="false">LÖN</string>
     <string name="splashtitle" translatable="false">TAXI-</string>
-    <string name="no_collective_agreement">Inget kollektivavtal - Ingen garantilön</string>
-    <string name="tvInfoCalulator">Du som kör på procentlön hos en åkare med kollektivavtal har rätt till garantilön. Det betyder att du har rätt till en lägstalön – oavsett hur mycket du kör in. Fyll i din ort och hur många timmar du arbetat den månad du vill beräkna din lön för.</string>
+    <string name="no_collective_agreement" translatable="false">Inget kollektivavtal - Ingen garantilön</string>
+    <string name="tvInfoCalulator" translatable="false">Du som kör på procentlön hos en åkare med kollektivavtal har rätt till garantilön. Det betyder att du har rätt till en lägstalön – oavsett hur mycket du kör in. Fyll i din ort och hur många timmar du arbetat den månad du vill beräkna din lön för.</string>
     <string name="icon" translatable="false">Icon</string>
 </resources>

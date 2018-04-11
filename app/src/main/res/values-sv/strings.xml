@@ -62,7 +62,7 @@
     <string name="bitraden">Biträden</string>
     <string name="afterTwoYearsTitle">Lön för förare efter 2år i yrket</string>
     <string name="startWage">Begynnelselön för förare</string>
-    <string name="vaccationPayResultInfo">OBS. Uträkningen baseras på att du är anställd på heltid, förutsatt att du inte varit frånvarande exempelvis; sjukdom, VAB eller tjänstledighet. * Om semesterersättning betalas ut vid varje löneutbetalningen skall den minst vara den angivna summan.</string>
+    <string name="vaccationPayResultInfo">OBS. Uträkningen baseras på att du är anställd på heltid, förutsatt att du inte varit frånvarande exempelvis; sjukdom, VAB eller tjänstledighet. * Om semesterersättning betalas ut vid varje löneutbetalning skall den minst vara den angivna summan.</string>
     <string name="not_member">Inte medlem än?</string>
     <string name="no_collective_agreement">Inget kollektivavtal - Ingen garantilön</string>
     <string name="tvInfoCalulator">Du som kör på procentlön hos en åkare med kollektivavtal har rätt till garantilön. Det betyder att du har rätt till en lägstalön – oavsett hur mycket du kör in. Fyll i din ort och hur många timmar du arbetat den månad du vill beräkna din lön för.</string>
