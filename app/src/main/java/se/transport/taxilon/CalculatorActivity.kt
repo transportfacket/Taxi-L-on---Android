@@ -3,17 +3,21 @@ package se.transport.taxilon
 
 
 import android.content.Intent
-import android.os.Build
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
-import android.support.v7.app.AlertDialog
+
 import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.*
 import android.widget.RadioGroup
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+import org.jetbrains.anko.alert
 import spencerstudios.com.bungeelib.Bungee
-import kotlin.math.roundToInt
+
+
+
 
 
 class CalculatorActivity : AppCompatActivity() {
@@ -28,8 +32,15 @@ class CalculatorActivity : AppCompatActivity() {
     private lateinit var layout: ConstraintLayout
     private lateinit var infoLocation: ImageView
     private lateinit var infoWorkedHours: ImageView
+    private lateinit var infoWorkingTimescale: ImageView
+    private lateinit var seekBar: DiscreteSeekBar
+    private lateinit var tvPercentage: TextView
     private var hasCollectiveAgreement: Boolean = true
+    private var workingTimescalePercentage: Int = 0
     data class PassOnValues(val salary: Double, val hours: Double)
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
@@ -61,11 +72,35 @@ class CalculatorActivity : AppCompatActivity() {
         infoCollectiveAgreement = findViewById(R.id.infoCollectiveAgreement)
         infoLocation = findViewById(R.id.infoLocation)
         infoWorkedHours = findViewById(R.id.infoWorkedHours)
+        infoWorkingTimescale = findViewById(R.id.infoWorkingTimescale)
         layout = findViewById(R.id.layout)
+        seekBar = findViewById(R.id.seekBar)
+        tvPercentage = findViewById(R.id.tvPercentage)
+        tvPercentage.text = "0 %"
 
 
+        seekBar.setOnProgressChangeListener(object : DiscreteSeekBar.OnProgressChangeListener {
 
 
+            override fun onProgressChanged(seekBar: DiscreteSeekBar, value: Int, fromUser: Boolean) {
+
+
+            }
+
+
+            override fun onStartTrackingTouch(seekBar: DiscreteSeekBar) {
+
+
+            }
+
+
+            override fun onStopTrackingTouch(seekBar: DiscreteSeekBar) {
+
+                tvPercentage.text = seekBar.progress.toString() + " %"
+                workingTimescalePercentage = seekBar.progress
+
+            }
+        })
 
         kollektivGroup = findViewById<View>(R.id.rgCollectiveAgreement) as RadioGroup
         kollektivGroup.setOnCheckedChangeListener { _, checkedId ->
@@ -98,6 +133,10 @@ class CalculatorActivity : AppCompatActivity() {
             infoDialog(getString(R.string.titleWorkedHoursInfoDialog), getString(R.string.bodyWorkedHoursInfoDialog))
 
         }
+        infoWorkingTimescale.setOnClickListener {
+            infoDialog(getString(R.string.titleWorkingTimescaleInfoDialog), getString(R.string.bodyWorkingTimescaleInfoDialog))
+
+        }
 
     }
 
@@ -118,35 +157,8 @@ class CalculatorActivity : AppCompatActivity() {
         when(hasCollectiveAgreement){
 
             true -> {
-                if (etLocation.text.isNullOrEmpty() && etWorkedHours.text.isNullOrEmpty()){
-
-                    etLocation.setError(getString(R.string.notEmpty))
-                    etWorkedHours.setError(getString(R.string.notEmpty))
-
-
-
-                }else if (etLocation.text.isNullOrEmpty()){
-                    etLocation.setError(getString(R.string.notEmpty))
-                }else if (etWorkedHours.text.isNullOrEmpty()){
-                    etWorkedHours.setError(getString(R.string.notEmpty))
-
-                } else{
-                    val (salary, hours) = calculateSalaryBy(whereDoIWork(etLocation.text.toString()), etWorkedHours.text.toString().replace(",", ".").toDouble())
-                    val intent = Intent(this, ShowResultActivity::class.java)
-
-
-
-                    intent.putExtra(AppConstants.PASSDATAKEY, salary)
-                    intent.putExtra(AppConstants.PASSDATAKEY2, hours)
-
-                    startActivity(intent)
-
-                }
-
+                checkingParametersBeforeCalculating()
             }
-
-
-
             false -> {
 
             }
@@ -155,8 +167,42 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
 
+    private fun checkingParametersBeforeCalculating(){
+        if (etLocation.text.isNullOrEmpty() && etWorkedHours.text.isNullOrEmpty()){
+
+            etLocation.error = getString(R.string.notEmpty)
+            etWorkedHours.error = getString(R.string.notEmpty)
+
+        }else if (etLocation.text.isNullOrEmpty()){
+            etLocation.error = getString(R.string.notEmpty)
+        }else if (etWorkedHours.text.isNullOrEmpty()){
+            etWorkedHours.error = getString(R.string.notEmpty)
+
+        } else if (workingTimescalePercentage == 0){
+            zeroPercentWorkingTimescaleDialog(getString(R.string.do_you_wanna_continue), getString(R.string.do_you_wanna_continue_message))
 
 
+        }else{
+            getValuesAndStartIntent()
+
+        }
+
+
+    }
+
+
+
+
+private fun getValuesAndStartIntent(){
+    val (salary, hours) = calculateSalaryBy(whereDoIWork(etLocation.text.toString()), etWorkedHours.text.toString().replace(",", ".").toDouble(), workingTimescalePercentage)
+    val intent = Intent(this, ShowResultActivity::class.java)
+
+    intent.putExtra(AppConstants.PASSDATAKEY, salary)
+    intent.putExtra(AppConstants.PASSDATAKEY2, hours)
+    intent.putExtra(AppConstants.PASSDATAKEY3, workingTimescalePercentage)
+
+    startActivity(intent)
+}
 
 
     private fun setupActionBar(){
@@ -175,25 +221,20 @@ class CalculatorActivity : AppCompatActivity() {
         Bungee.slideRight(this)
     }
 
-
-
-    private fun infoDialog (title: String, message: String){
-
-        val builder: AlertDialog.Builder = when {
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP -> AlertDialog.Builder(this)
-            else -> AlertDialog.Builder(this)
-        }
-        builder.setTitle(title)
-                .setCancelable(false)
-                .setMessage(message)
-                .setPositiveButton("OK", { _, _ ->
-                })
-                .show()
-
+    private fun infoDialog (withTitle: String, andMessage: String){
+        alert(andMessage) {
+            title = withTitle
+            positiveButton("Ok") {  }
+        }.show()
     }
 
-
-
+    private fun zeroPercentWorkingTimescaleDialog (withTitle: String, andMessage: String){
+        alert(andMessage) {
+            title = withTitle
+            positiveButton(getString(R.string.yes)) { getValuesAndStartIntent() }
+            negativeButton(getString(R.string.no)) { }
+        }.show()
+    }
 
 
 
@@ -212,7 +253,14 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
 
-    private fun calculateSalaryBy(isLocationSthlm: Boolean, workedHours: Double): PassOnValues{
+    private fun calculateSalaryBy(isLocationSthlm: Boolean, hours: Double, workingTimescale: Int): PassOnValues{
+
+        var calculateWithPercentage = 0
+        if (workingTimescalePercentage == 0) {
+            calculateWithPercentage = 100
+        }else{
+            calculateWithPercentage = workingTimescale
+        }
 
         val baseSalaryToCalculateFrom: Double = when (isLocationSthlm) {
             true -> AppConstants.GUARANTEESALARYSTHLM
@@ -226,15 +274,19 @@ class CalculatorActivity : AppCompatActivity() {
 
 
         returnSalary = when {
-            workedHours <= AppConstants.GUARANTEEHOURS -> {
+            hours <= AppConstants.GUARANTEEHOURS -> {
                 baseSalaryToCalculateFrom
+
+                var workedHours = AppConstants.GUARANTEEHOURS / 100 * calculateWithPercentage
+                 baseSalaryToCalculateFrom / AppConstants.GUARANTEEHOURS * workedHours
+
             }
-            else -> baseSalaryToCalculateFrom / AppConstants.GUARANTEEHOURS * workedHours
+            else -> baseSalaryToCalculateFrom / AppConstants.GUARANTEEHOURS * hours
         }
 
 
 
-        return PassOnValues(returnSalary, workedHours)
+        return PassOnValues(returnSalary, hours)
     }
 
 

@@ -18,6 +18,7 @@ class ShowResultActivity : AppCompatActivity() {
 
     private var passedSalary: Double = 0.0
     private var passedHours: Double = 0.0
+    private var passedWorkingTimescale: Int = 0
 
     private var calculateHolidayPay = 0.0
     private var calculateAverageHourlyWage = 0.0
@@ -27,11 +28,12 @@ class ShowResultActivity : AppCompatActivity() {
     private lateinit var closeButton: Button
     private lateinit var vaccationPay: TextView
     private lateinit var averageHourlyWage: TextView
+    private lateinit var disclaimer: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_result)
-        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         initViews()
         receivingValue()
 
@@ -52,10 +54,13 @@ class ShowResultActivity : AppCompatActivity() {
         calculateAverageHourlyWage = passedSalary / passedHours
 
 
-
+        if (passedWorkingTimescale == 0){
+            passedWorkingTimescale = 100
+        }
 
 
         val formattedHourlyWage = "%.2f".format(calculateAverageHourlyWage)
+
 
         val totalSalaryWithHoliday = passedSalary + calculateHolidayPay
         val formattedTotalSalary = formatter.format(totalSalaryWithHoliday.roundToInt())
@@ -65,12 +70,8 @@ class ShowResultActivity : AppCompatActivity() {
 
         vaccationPay.text = getString(R.string.tvCalculatedSalary, formattedVaccationPay.toString())
         averageHourlyWage.text = getString(R.string.tvCalculatedHourlyWage, formattedHourlyWage)
+        disclaimer.text = getString(R.string.tvResulteDiscplamer, passedWorkingTimescale.toString())
 
-
-
-    }
-    override fun onBackPressed() {
-        super.onBackPressed()
 
 
     }
@@ -81,6 +82,7 @@ class ShowResultActivity : AppCompatActivity() {
         averageHourlyWage = findViewById(R.id.tvAverageHourlyWage)
         calculatedTotalSalaryTextView = findViewById(R.id.tvCalculatedTotal)
         vaccationPay = findViewById(R.id.tvVaccationPay)
+        disclaimer = findViewById(R.id.tvDisclaimer)
 
         closeButton = findViewById(R.id.bClose)
         closeButton.setOnClickListener {
@@ -94,6 +96,7 @@ class ShowResultActivity : AppCompatActivity() {
         val intent = intent
         passedSalary = intent.getDoubleExtra(AppConstants.PASSDATAKEY, 0.0)
         passedHours = intent.getDoubleExtra(AppConstants.PASSDATAKEY2, 0.0 )
+        passedWorkingTimescale = intent.getIntExtra(AppConstants.PASSDATAKEY3, 0)
 
     }
 
